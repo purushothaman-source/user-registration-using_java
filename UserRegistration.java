@@ -9,7 +9,7 @@ public class UserRegistration {
 		System.out.println("Welcome to User-Registration Problem");
 
 		int options = 1;
-		while (options < 7) {
+		while (options < 8) {
 
 			switch (options) {
 			case 1:
@@ -30,7 +30,10 @@ public class UserRegistration {
 			case 6:
 				UserRegistrationMethods.passwordR2();
 				break;
-				
+			case 7:
+				UserRegistrationMethods.passwordR3();
+				break;
+
 			}
 			options++;
 		}
