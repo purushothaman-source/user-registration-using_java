@@ -1,25 +1,27 @@
 package com.java.userregistration;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class UserRegistration {
+	static Scanner input = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		String firstName = "^[A-Z][a-zA-Z]{2,}$";
-		Pattern pattern = Pattern.compile(firstName);
-		System.out.println("Enter valid FirstName : ");
-		String text;
-		while (true) {
-			text = input.nextLine();
-			Matcher matcher = pattern.matcher(text);
-			if (matcher.matches()) {
-				System.out.print("Valid pattern");
+		System.out.println("Welcome to User-Registration Problem");
+
+		int options = 1;
+		while (options < 3) {
+
+			switch (options) {
+			case 1:
+				UserRegistrationMethods.firstName();
 				break;
-			} else {
-				System.out.print("Invalid Pattern,Try Again");
+			case 2:
+				UserRegistrationMethods.lastName();
+				break;
 			}
+			options++;
 		}
+
 	}
+
 }
