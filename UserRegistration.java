@@ -9,7 +9,7 @@ public class UserRegistration {
 		System.out.println("Welcome to User-Registration Problem");
 
 		int options = 1;
-		while (options < 5) {
+		while (options < 6) {
 
 			switch (options) {
 			case 1:
@@ -24,6 +24,10 @@ public class UserRegistration {
 			case 4:
 				UserRegistrationMethods.mobile();
 				break;
+			case 5:
+				UserRegistrationMethods.passwordR1();
+				break;
+				
 			}
 			options++;
 		}

@@ -11,6 +11,7 @@ public class UserRegistrationMethods {
 	static String lastName = "^[A-Z][a-z]{2,}$";
 	static String email = "^[0-9a-zA-Z]+([.\\-_+][0-9a-zA-Z]+)*@[a-z0-9A-Z]+.[a-z]{2,4}([.][a-zA-Z]{2,})*$";
 	static String mobile = "^91[ ][6-9][0-9]{9}$";
+	static String passwordR1 = "^[a-zA-Z0-9]{8,}$";
 
 	// FirstName method
 	public static void firstName() {
@@ -78,5 +79,22 @@ public class UserRegistrationMethods {
 		}
 
 	}
+	//Password rule1 Method
+		public static void passwordR1() {
+			while (true) {
+				System.out.println("Enter password with minimum 8 characters  : ");
+				text = input.nextLine();
+				Pattern pattern = Pattern.compile(passwordR1);
+				Matcher matcher = pattern.matcher(text);
+				if (matcher.matches()) {
+					System.out.println(">>>>Valid pattern>>>>");
+					break;
+				} else
+					System.out.println("******Invalid password , Try Again*******");
 
+			}
+
+		}
+
+    
 }
