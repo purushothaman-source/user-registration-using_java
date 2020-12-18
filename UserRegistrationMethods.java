@@ -7,8 +7,10 @@ import java.util.regex.Pattern;
 public class UserRegistrationMethods {
 	static Scanner input = new Scanner(System.in);
 	static String text;
-	static String firstName = "^[A-Z][a-zA-Z]{2,}$";
-	static String lastName = "^[A-Z][a-zA-Z]{2,}$";
+	static String firstName = "^[A-Z][a-z]{2,}$";
+	static String lastName = "^[A-Z][a-z]{2,}$";
+	static String email = "^[0-9a-zA-Z]+([.\\-_+][0-9a-zA-Z]+)*@[a-z0-9A-Z]+.[a-z]{2,4}([.][a-zA-Z]{2,})*$";
+
 	public static void firstName() {
 		while (true) {
 			System.out.println("Enter FirstName : ");
@@ -18,12 +20,12 @@ public class UserRegistrationMethods {
 			if (matcher.matches()) {
 				System.out.println(">>>>Valid pattern>>>>");
 				break;
-			} else {
-				System.out.println("*******Invalid firstName Pattern,Try Again******");
-			}
+			} else 
+				System.out.println("*******Invalid firstName Pattern , Try Again******");
 		}
-		
-		}
+
+	}
+
 	public static void lastName() {
 		while (true) {
 			System.out.println("Enter lastName : ");
@@ -31,13 +33,28 @@ public class UserRegistrationMethods {
 			Pattern pattern = Pattern.compile(lastName);
 			Matcher matcher = pattern.matcher(text);
 			if (matcher.matches()) {
-				System.out.println("Valid pattern");
+				System.out.println(">>>>>Valid pattern>>>>");
 				break;
-			} else {
-				System.out.println("Invalid lastName Pattern,Try Again");
-			}
+			} else 
+				System.out.println("****Invalid lastName Pattern , Try Again***");
+			
 		}
-		
+
+	}
+	public static void email() {
+		while (true) {
+			System.out.println("Enter Email : ");
+			text = input.nextLine();
+			Pattern pattern = Pattern.compile(email);
+			Matcher matcher = pattern.matcher(text);
+			if (matcher.matches()) {
+				System.out.println(">>>>Valid pattern>>>>");
+				break;
+			} else 
+				System.out.println("******Invalid email Pattern , Try Again*******");
+			
 		}
+
+	}
 
 }
